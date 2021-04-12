@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CriarTarefaComponent } from './tarefa/criar-tarefa/criar-tarefa.component';
-import { TarefaModule } from './tarefa/tarefa.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TarefaModule } from './tarefa/tarefa.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     TarefaModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

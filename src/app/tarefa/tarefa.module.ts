@@ -5,18 +5,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
+import { ListarTarefaComponent } from './listar-tarefa/listar-tarefa.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [CriarTarefaComponent],
+  declarations: [CriarTarefaComponent, ListarTarefaComponent],
   imports: [
     CommonModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule
   ],
   exports: [
-      CriarTarefaComponent
+      CriarTarefaComponent,
+      ListarTarefaComponent
   ]
 })
 export class TarefaModule { }
