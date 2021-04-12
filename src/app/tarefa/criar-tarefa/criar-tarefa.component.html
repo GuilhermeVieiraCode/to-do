@@ -1,15 +1,20 @@
 <mat-card class="criar-tarefa-card">
     <mat-card-header>
         <mat-icon mat-card-avatar>sticky_note_2</mat-icon>
-        <mat-card-title>Nova Tarefa</mat-card-title>
+        <mat-card-title>Novo todo</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <form>
             <mat-form-field>
-                <mat-label>Descrição</mat-label>
+                <mat-label>Título</mat-label>
                 <textarea matInput></textarea>
             </mat-form-field>
+            <mat-form-field>
+                <mat-label>Descrição</mat-label>
+                <textarea class="descricao" matInput></textarea>
+                <mat-hint align="start"><strong>Opcional</strong></mat-hint>
+            </mat-form-field>
         </form>
-        <button mat-raised-button color="primary"><mat-icon>add</mat-icon></button>
+        <button class="save-button" mat-stroked-button>Salvar</button>
     </mat-card-content>
 </mat-card>    
