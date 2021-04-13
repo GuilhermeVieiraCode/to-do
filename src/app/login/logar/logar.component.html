@@ -1,0 +1,16 @@
+<mat-card class="menu-class">
+<mat-card-title>Bem vindo</mat-card-title>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Login</mat-label>
+    <input matInput placeholder="email" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Senha</mat-label>
+    <input matInput placeholder="senha">
+  </mat-form-field>
+</form>
+<button  mat-raised-button color="primary">Logar</button>
+  <button class="button-person" mat-raised-button color="primary" [routerLink]="['/cadastro']">Cadastrar</button>
+
+</mat-card>
