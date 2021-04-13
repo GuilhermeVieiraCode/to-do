@@ -35,6 +35,7 @@ import {LogarComponent} from './login/logar/logar.component';
     FormsModule,
     MatMenuModule,
     NgxMaskModule.forRoot(),
+    TarefaModule
 
   ],
   providers: [],
