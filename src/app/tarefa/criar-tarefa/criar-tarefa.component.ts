@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
+import { Tarefa } from 'src/app/shared/models/tarefa';
 
 @Component({
   selector: 'app-criar-tarefa',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarTarefaComponent implements OnInit {
 
-  constructor() { }
+  tarefa : Tarefa;
+  tarefas! : Array<Tarefa>;  
+
+  constructor( private tarefaService : TarefaService) { 
+    this.tarefa = new Tarefa();
+  }
 
   ngOnInit(): void {
+    this.tarefaService.listar().subscribe({
+        next: (tarefas) => this.tarefas = tarefas
+    });
   }
+
+  salvarTarefa(){
+      this.tarefaService.inserir(this.tarefa).subscribe({
+          next: (tarefa) => {
+              console.log("Sucesso", tarefa);
+              this.tarefa = new Tarefa();
+
+              this.tarefaService.listar().subscribe({
+                next: (tarefas) => this.tarefas = tarefas
+            });
+            }
+      })
+  } 
 
 }

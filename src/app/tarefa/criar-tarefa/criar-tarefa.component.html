@@ -6,15 +6,11 @@
     <mat-card-content>
         <form>
             <mat-form-field>
-                <mat-label>Título</mat-label>
-                <textarea matInput></textarea>
-            </mat-form-field>
-            <mat-form-field>
                 <mat-label>Descrição</mat-label>
-                <textarea class="descricao" matInput></textarea>
-                <mat-hint align="start"><strong>Opcional</strong></mat-hint>
+                <textarea class="descricao" matInput [(ngModel)]="tarefa.descricao" [ngModelOptions]="{standalone: true}"></textarea>
             </mat-form-field>
         </form>
-        <button class="save-button" mat-stroked-button>Salvar</button>
+        <button class="save-button" mat-stroked-button (click)="salvarTarefa()">Salvar</button>
     </mat-card-content>
-</mat-card>    
+</mat-card>
+<app-listar-tarefa [tarefas]="tarefas"></app-listar-tarefa>  
