@@ -1,7 +1,9 @@
+<div class="grid-criar-tarefa-geral">
+  <div>
 <mat-card class="criar-tarefa-card">
     <mat-card-header>
         <mat-icon mat-card-avatar>sticky_note_2</mat-icon>
-        <mat-card-title>Novo todo</mat-card-title>
+        <mat-card-title>Novo to-do</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <form>
@@ -13,4 +15,8 @@
         <button class="save-button" mat-stroked-button (click)="salvarTarefa()">Salvar</button>
     </mat-card-content>
 </mat-card>
-<app-listar-tarefa [tarefas]="tarefas"></app-listar-tarefa>  
+  </div>
+  <div>
+<app-listar-tarefa [tarefas]="tarefas"></app-listar-tarefa>
+  </div>
+</div>
