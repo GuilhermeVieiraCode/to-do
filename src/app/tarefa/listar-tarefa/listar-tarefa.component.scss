@@ -1,10 +1,24 @@
+.grid {
+  display: grid;
+  grid-gap: 0.5rem;
+  margin-top: 200px;
+}
+
 .mat-card-tarefa{
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  align-items: center;
     max-width: 200px;
-    background-color: rgba(51, 51, 153, 0.3);;
-    margin-top: 10px;
+    background-color: rgba(51, 51, 153, 0.3);
+
 }
 
 .mat-icon-button i, .mat-icon-button .mat-icon {
     line-height: 0px;
 
+}
+
+button{
+    margin-left: 85%;
 }

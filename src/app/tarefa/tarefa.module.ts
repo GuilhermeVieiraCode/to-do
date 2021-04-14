@@ -7,16 +7,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
 import { ListarTarefaComponent } from './listar-tarefa/listar-tarefa.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CriarTarefaComponent, ListarTarefaComponent],
   imports: [
-    CommonModule,
+  CommonModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule
   ],
   exports: [
       CriarTarefaComponent,

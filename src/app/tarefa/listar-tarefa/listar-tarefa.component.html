@@ -1,15 +1,6 @@
-<div>
-    <mat-card *ngFor="let tarefa of tarefasToDo" class="mat-card-tarefa">
-        <mat-card-header>
-            <mat-card-title>
-                {{tarefa.titulo}}
-            </mat-card-title>
-            <button class="deletar" mat-icon-button><mat-icon>clear</mat-icon></button>
-            <mat-card-subtitle>
-                {{tarefa.data}}
-                {{tarefa.hora}}
-            </mat-card-subtitle>
-        </mat-card-header>
+<div class="grid">
+    <mat-card *ngFor="let tarefa of tarefas" class="mat-card-tarefa">
+        <button mat-icon-button (click)="removerTarefa(tarefa)"><mat-icon>clear</mat-icon></button>
         <mat-card-content>
             {{tarefa.descricao}}
         </mat-card-content>
