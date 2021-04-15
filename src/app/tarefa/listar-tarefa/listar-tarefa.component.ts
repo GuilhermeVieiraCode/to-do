@@ -9,20 +9,20 @@ import { Tarefa } from 'src/app/shared/models/tarefa';
 })
 export class ListarTarefaComponent implements OnInit {
 
-  @Input() tarefas!: Array<Tarefa>
+  @Input() listaTarefas!: Array<Tarefa>
 
   constructor( private tarefaService : TarefaService ) { }
 
   ngOnInit(): void {}
 
   removerTarefa(tarefa: Tarefa){
-      this.tarefaService.remover(tarefa.id).subscribe({
-        next: () => {
-            const index = this.tarefas.indexOf(tarefa);
-            if(index > -1){
-                this.tarefas.splice(index, 1);
-            }
-        }
-    })
+    this.tarefaService.remover(tarefa.id).subscribe({
+      next: () => {
+          const index = this.listaTarefas.indexOf(tarefa);
+          if(index > -1){
+              this.listaTarefas.splice(index, 1);
+          }
+      }
+  })
  }
 }            

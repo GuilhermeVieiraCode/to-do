@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LogarComponent} from './login/logar/logar.component';
 import {CadastroComponent} from './login/cadastro/cadastro.component';
-import {ListarComponent} from './login/listar/listar.component';
 import { CriarTarefaComponent } from './tarefa/criar-tarefa/criar-tarefa.component';
+import { TelaTarefaComponent } from './tarefa/tela-tarefa/tela-tarefa.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: CriarTarefaComponent
-  },
-  {
-    path: 'cadastro',
-    component: CadastroComponent
-  },
-  {
-    path: 'listar',
-    component: ListarComponent
-  }
+    {
+        path: 'criartodo',
+        component: TelaTarefaComponent
+    },
+    {
+        path: 'cadastro',
+        component: CadastroComponent
+    },
+    {
+      path: '',
+      component: TelaTarefaComponent
+    },
 ];
 
 @NgModule({

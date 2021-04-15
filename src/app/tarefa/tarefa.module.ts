@@ -8,9 +8,10 @@ import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
 import { ListarTarefaComponent } from './listar-tarefa/listar-tarefa.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { TelaTarefaComponent } from './tela-tarefa/tela-tarefa.component';
 
 @NgModule({
-  declarations: [CriarTarefaComponent, ListarTarefaComponent],
+  declarations: [CriarTarefaComponent, ListarTarefaComponent, TelaTarefaComponent],
   imports: [
   CommonModule,
     MatInputModule,
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
       CriarTarefaComponent,
-      ListarTarefaComponent
+      ListarTarefaComponent,
+      TelaTarefaComponent
   ]
 })
 export class TarefaModule { }
