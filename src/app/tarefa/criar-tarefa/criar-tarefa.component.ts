@@ -10,7 +10,7 @@ import { Tarefa } from 'src/app/shared/models/tarefa';
 export class CriarTarefaComponent implements OnInit {
 
   tarefa : Tarefa;
-  tarefas! : Array<Tarefa>;  
+  tarefasCriar! : Array<Tarefa>;  
 
   constructor( private tarefaService : TarefaService) { 
     this.tarefa = new Tarefa();
@@ -18,7 +18,7 @@ export class CriarTarefaComponent implements OnInit {
 
   ngOnInit(): void {
     this.tarefaService.listar().subscribe({
-        next: (tarefas) => this.tarefas = tarefas
+        next: (tarefas) => this.tarefasCriar = tarefas
     });
   }
 
@@ -29,7 +29,7 @@ export class CriarTarefaComponent implements OnInit {
               this.tarefa = new Tarefa();
 
               this.tarefaService.listar().subscribe({
-                next: (tarefas) => this.tarefas = tarefas
+                next: (tarefas) => this.tarefasCriar = tarefas
             });
             }
       })

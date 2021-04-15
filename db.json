@@ -1,24 +1,3 @@
 {
-  "tarefas": [
-    {
-      "descricao": "hidekazu",
-      "id": 1
-    },
-    {
-      "descricao": "aulas",
-      "id": 2
-    },
-    {
-      "descricao": "cria",
-      "id": 3
-    },
-    {
-      "descricao": "gui",
-      "id": 4
-    },
-    {
-      "descricao": "pablo",
-      "id": 5
-    }
-  ]
+  "tarefas": []
 }
