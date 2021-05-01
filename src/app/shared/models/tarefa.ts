@@ -1,4 +1,10 @@
 export class Tarefa{
-    id!: number;
-    descricao!: string;
+    id?: string;
+    descricao?: string;
+
+    constructor(id?: string, tarefa: Tarefa = {}) {
+      this.id = id;
+      this.descricao = tarefa.descricao;
+    }
+   
 }
