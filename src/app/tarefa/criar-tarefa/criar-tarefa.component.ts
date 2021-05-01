@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
+import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
+
 import { Tarefa } from 'src/app/shared/models/tarefa';
 
 @Component({
@@ -12,7 +14,7 @@ export class CriarTarefaComponent implements OnInit {
   tarefa : Tarefa;
   tarefasCriar! : Array<Tarefa>;  
 
-  constructor( private tarefaService : TarefaService) { 
+  constructor( private tarefaService : TarefaFirestoreService) { 
     this.tarefa = new Tarefa();
   }
 

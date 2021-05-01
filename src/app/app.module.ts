@@ -16,6 +16,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import {CadastroComponent} from './login/cadastro/cadastro.component';
 import {LogarComponent} from './login/logar/logar.component';
+import { FirestoreModule } from './firestore/firestore.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +37,9 @@ import {LogarComponent} from './login/logar/logar.component';
     FormsModule,
     MatMenuModule,
     NgxMaskModule.forRoot(),
-    TarefaModule
-
-  ],
+    TarefaModule,
+    FirestoreModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
