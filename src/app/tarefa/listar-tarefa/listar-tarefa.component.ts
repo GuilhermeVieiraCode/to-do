@@ -3,7 +3,6 @@ import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 import { Tarefa } from 'src/app/shared/models/tarefa';
 //import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
 
-
 @Component({
   selector: 'app-listar-tarefa',
   templateUrl: './listar-tarefa.component.html',
