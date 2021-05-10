@@ -1,8 +1,18 @@
 {
   "tarefas": [
     {
+      "todo": true,
+      "doing": false,
+      "done": false,
       "descricao": "tarefa teste",
       "id": 1
+    },
+    {
+      "todo": true,
+      "doing": false,
+      "done": false,
+      "descricao": "tarefa teste 2",
+      "id": 2
     }
   ]
 }

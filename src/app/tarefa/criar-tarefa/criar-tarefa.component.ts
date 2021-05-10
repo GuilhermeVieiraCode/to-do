@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 //import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
 
@@ -12,15 +12,20 @@ import { Tarefa } from 'src/app/shared/models/tarefa';
 export class CriarTarefaComponent implements OnInit {
 
   tarefa : Tarefa;
-  tarefasCriar! : Array<Tarefa>;  
+  tarefasToDo! : Array<Tarefa>;
+  tarefasDoing! : Array<Tarefa>;
+  tarefasDone! : Array<Tarefa>;  
 
   constructor( private tarefaService : TarefaService) { 
     this.tarefa = new Tarefa();
+    this.tarefa.todo = true;
+    this.tarefa.doing = false;
+    this.tarefa.done = false;
   }
 
   ngOnInit(): void {
     this.tarefaService.listar().subscribe({
-        next: (tarefas) => this.tarefasCriar = tarefas
+        next: (tarefas) => this.tarefasToDo = tarefas
     });
   }
 
@@ -31,7 +36,7 @@ export class CriarTarefaComponent implements OnInit {
               this.tarefa = new Tarefa();
 
               this.tarefaService.listar().subscribe({
-                next: (tarefas) => this.tarefasCriar = tarefas
+                next: (tarefas) => this.tarefasToDo = tarefas
             });
             }
       })
