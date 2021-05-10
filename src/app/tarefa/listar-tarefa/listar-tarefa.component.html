@@ -2,7 +2,9 @@
     <mat-card *ngFor="let tarefa of listaTarefas" class="mat-card-tarefa">
         <button mat-icon-button (click)="removerTarefa(tarefa.id!)"><mat-icon>clear</mat-icon></button>
         <mat-card-content>
+          <p class="line-break">
             {{tarefa.descricao}}
+          </p>  
         </mat-card-content>
     </mat-card>
 </div>
