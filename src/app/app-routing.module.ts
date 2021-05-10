@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CadastroComponent} from './login/cadastro/cadastro.component';
-import { CriarTarefaComponent } from './tarefa/criar-tarefa/criar-tarefa.component';
+import {CadastroComponent} from './autenticacao/cadastro/cadastro.component';
+import { LogarComponent } from './autenticacao/logar/logar.component';
 import { TelaTarefaComponent } from './tarefa/tela-tarefa/tela-tarefa.component';
 
 const routes: Routes = [
@@ -13,6 +13,10 @@ const routes: Routes = [
         path: 'cadastro',
         component: CadastroComponent
     },
+    {
+      path: 'login',
+      component: LogarComponent
+  },
     {
       path: '',
       component: TelaTarefaComponent

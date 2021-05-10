@@ -1,12 +1,3 @@
 {
-  "tarefas": [
-    {
-      "descricao": "lorem ipsum dolor",
-      "id": 1
-    },
-    {
-      "descricao": "teste",
-      "id": 2
-    }
-  ]
+  "tarefas": []
 }

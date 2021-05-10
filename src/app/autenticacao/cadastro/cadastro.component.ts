@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['../login.component.scss']
+  styleUrls: ['../autenticacao.component.scss']
 })
 export class CadastroComponent implements OnInit {
   usuario: Usuario;
