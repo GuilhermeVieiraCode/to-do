@@ -20,7 +20,7 @@ export class TarefaService {
       return this.httpClient.post<Tarefa>(this.url, tarefa);
   }
 
-  remover(id: number): Observable<object>{
+  remover(id: string): Observable<object>{
     return this.httpClient.delete(`${this.url}/${id}`);
 }
 }

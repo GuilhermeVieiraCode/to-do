@@ -5,7 +5,7 @@ import {UsuariosService} from '../../shared/services/usuarios.service';
 @Component({
   selector: 'app-logar',
   templateUrl: './logar.component.html',
-  styleUrls: ['../login.component.scss']
+  styleUrls: ['../autenticacao.component.scss']
 })
 export class LogarComponent implements OnInit {
   usuario: Usuario;
