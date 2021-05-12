@@ -8,11 +8,25 @@
       "id": 1
     },
     {
-      "todo": true,
-      "doing": false,
+      "todo": false,
+      "doing": true,
       "done": false,
       "descricao": "tarefa teste 2",
       "id": 2
+    },
+    {
+      "todo": false,
+      "doing": false,
+      "done": true,
+      "descricao": "tarefa teste 3",
+      "id": 3
+    },
+    {
+      "todo": true,
+      "doing": false,
+      "done": false,
+      "descricao": "tarefa teste 4",
+      "id": 4
     }
   ]
 }

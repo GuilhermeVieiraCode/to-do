@@ -1,5 +1,5 @@
 <div class="grid">
-    <mat-card *ngFor="let tarefa of listaTarefas" class="mat-card-tarefa">
+    <mat-card *ngFor="let tarefa of listagemTarefasToDo" class="mat-card-tarefa">
         <button mat-icon-button (click)="removerTarefa(tarefa.id!)"><mat-icon>clear</mat-icon></button>
         <mat-card-content>
           <p class="line-break">
@@ -7,4 +7,22 @@
           </p>  
         </mat-card-content>
     </mat-card>
+
+    <mat-card *ngFor="let tarefa of listagemTarefasDoing" class="mat-card-tarefa">
+      <button mat-icon-button (click)="removerTarefa(tarefa.id!)"><mat-icon>clear</mat-icon></button>
+      <mat-card-content>
+        <p class="line-break">
+          {{tarefa.descricao}}
+        </p>  
+      </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngFor="let tarefa of listagemTarefasDone" class="mat-card-tarefa">
+    <button mat-icon-button (click)="removerTarefa(tarefa.id!)"><mat-icon>clear</mat-icon></button>
+    <mat-card-content>
+      <p class="line-break">
+        {{tarefa.descricao}}
+      </p>  
+    </mat-card-content>
+</mat-card>
 </div>
