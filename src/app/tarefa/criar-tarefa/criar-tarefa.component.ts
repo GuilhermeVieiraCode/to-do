@@ -12,6 +12,7 @@ import { Tarefa } from 'src/app/shared/models/tarefa';
 export class CriarTarefaComponent implements OnInit {
 
   tarefa : Tarefa;
+  tarefasAll!: Array<Tarefa>;
   tarefasToDo! : Array<Tarefa>;
   tarefasDoing! : Array<Tarefa>;
   tarefasDone! : Array<Tarefa>;  
@@ -21,12 +22,33 @@ export class CriarTarefaComponent implements OnInit {
     this.tarefa.todo = true;
     this.tarefa.doing = false;
     this.tarefa.done = false;
+
+    this.tarefasAll = [];
+    this.tarefasToDo = [];
+    this.tarefasDoing = [];
+    this.tarefasDone = [];
   }
 
   ngOnInit(): void {
     this.tarefaService.listar().subscribe({
-        next: (tarefas) => this.tarefasToDo = tarefas
-    });
+        next: (tarefas) => {
+          this.tarefasAll = tarefas;
+          this.organizarTarefas(this.tarefasAll)
+      }
+    })
+
+  }
+
+  organizarTarefas(tarefas : Array<Tarefa>){
+    tarefas.map(tarefa => {
+      if(tarefa.todo === true) {
+        this.tarefasToDo.unshift(tarefa)
+      }if(tarefa.doing === true) {
+        this.tarefasDoing.unshift(tarefa)
+      }if(tarefa.done === true)  {
+        this.tarefasDone.unshift(tarefa)
+      }
+    }) 
   }
 
   salvarTarefa(){
@@ -36,10 +58,16 @@ export class CriarTarefaComponent implements OnInit {
               this.tarefa = new Tarefa();
 
               this.tarefaService.listar().subscribe({
-                next: (tarefas) => this.tarefasToDo = tarefas
+                next: (tarefas) => {
+                  this.tarefasAll = tarefas;
+                  this.tarefasToDo = [];
+                  this.tarefasDoing = [];
+                  this.tarefasDone = [];
+                  this.organizarTarefas(this.tarefasAll)
+                }
             });
             }
-      })
+          })
   } 
 
 }
