@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { FirestoreModule } from './firestore/firestore.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
+import { LayoutModule } from "./layout/layout.module";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AutenticacaoModule } from './autenticacao/autenticacao.module';
     NgxMaskModule.forRoot(),
     FirestoreModule,
     TarefaModule,
-    AutenticacaoModule
+    AutenticacaoModule,
+    LayoutModule
 ],
   providers: [],
   bootstrap: [AppComponent]
