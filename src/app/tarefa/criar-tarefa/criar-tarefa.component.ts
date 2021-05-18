@@ -19,14 +19,7 @@ export class CriarTarefaComponent implements OnInit {
 
   constructor( private tarefaService : TarefaService) { 
     this.tarefa = new Tarefa();
-    this.tarefa.todo = true;
-    this.tarefa.doing = false;
-    this.tarefa.done = false;
-
-    this.tarefasAll = [];
-    this.tarefasToDo = [];
-    this.tarefasDoing = [];
-    this.tarefasDone = [];
+    this.tarefa.estado = "todo";
   }
 
   ngOnInit(): void {
@@ -40,13 +33,21 @@ export class CriarTarefaComponent implements OnInit {
   }
 
   organizarTarefas(tarefas : Array<Tarefa>){
+    this.tarefasToDo = [];
+    this.tarefasDoing = [];
+    this.tarefasDone = [];
+    
     tarefas.map(tarefa => {
-      if(tarefa.todo === true) {
-        this.tarefasToDo.unshift(tarefa)
-      }if(tarefa.doing === true) {
-        this.tarefasDoing.unshift(tarefa)
-      }if(tarefa.done === true)  {
-        this.tarefasDone.unshift(tarefa)
+      switch(tarefa.estado){
+        case "todo":
+          this.tarefasToDo.unshift(tarefa);
+          break;
+        case "doing":
+          this.tarefasDoing.unshift(tarefa);
+          break;
+        case "done":
+          this.tarefasDone.unshift(tarefa);
+          break;  
       }
     }) 
   }
@@ -60,9 +61,6 @@ export class CriarTarefaComponent implements OnInit {
               this.tarefaService.listar().subscribe({
                 next: (tarefas) => {
                   this.tarefasAll = tarefas;
-                  this.tarefasToDo = [];
-                  this.tarefasDoing = [];
-                  this.tarefasDone = [];
                   this.organizarTarefas(this.tarefasAll)
                 }
             });

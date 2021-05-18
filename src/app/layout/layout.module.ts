@@ -7,10 +7,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {RouterModule} from "@angular/router";
 
-
-
-
-
 @NgModule({
   declarations: [MenuComponent],
   exports: [
