@@ -1,11 +1,16 @@
-.menu-background {
-  background-color: fuchsia;
+.navbar {
+  background-color: rgb(51, 51, 153);
+  max-height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .sair {
-  margin-left: 1230px;
+  color: white;
 }
- .imglogo {
-  width: 70px;
-   height: 50px;
- }
+
+.imgLogo {
+  width: 75px;
+  height: 65px;
+}

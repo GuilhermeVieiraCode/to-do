@@ -18,14 +18,14 @@ export class ListarTarefaComponent implements OnInit {
 
   ngOnInit(): void {}
   
-  removerTarefa(id: string){
-  //   this.tarefaService.remover(id).subscribe({
-  //     next: () => {
-  //         const index = this.tarefasAll.findIndex(tarefa => tarefa.id === id);
-  //         if(index > -1){
-  //             this.tarefasAll.splice(index, 1);
-  //         }
-  //     }
-  // })
+  removerTarefa(id: number){
+//     this.tarefaService.remover(String(id)).subscribe({
+//       next: () => {
+//           const index = this.tarefasAll.findIndex(tarefa => tarefa.id === id);
+//           if(index > -1){
+//               this.tarefasAll.splice(index, 1);
+//             }
+//           }
+//         })
  }
 }            
