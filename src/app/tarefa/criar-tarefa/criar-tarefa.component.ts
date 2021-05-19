@@ -57,6 +57,7 @@ export class CriarTarefaComponent implements OnInit {
           next: (tarefa) => {
               console.log("Sucesso", tarefa);
               this.tarefa = new Tarefa();
+              this.tarefa.estado = "todo";
 
               this.tarefaService.listar().subscribe({
                 next: (tarefas) => {
@@ -65,7 +66,7 @@ export class CriarTarefaComponent implements OnInit {
                 }
             });
             }
-          })
+          })  
   } 
 
 }

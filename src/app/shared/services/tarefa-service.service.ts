@@ -20,32 +20,27 @@ export class TarefaService {
       return this.httpClient.post<Tarefa>(this.url, tarefa);
   }
 
-  remover(id: string): Observable<object>{
+  remover(id: number): Observable<object>{
     return this.httpClient.delete(`${this.url}/${id}`);
   }
 
-  // organizarTarefas(tarefas: Array<Tarefa>,
-  //                 tarefasToDo : Array<Tarefa>, 
-  //                 tarefasDoing: Array<Tarefa>, 
-  //                 tarefasDone: Array<Tarefa>){
-  //   tarefasToDo = [];
-  //   tarefasDoing = [];
-  //   tarefasDone = [];
+//   organizarTarefas(tarefas: Array<Tarefa): Array{
+//     tarefasToDo = [];
+//     tarefasDoing = [];
+//     tarefasDone = [];
     
-  //   tarefas.map(tarefa => {
-  //     switch(tarefa.estado){
-  //       case "todo":
-  //         tarefasToDo.unshift(tarefa);
-  //         break;
-  //       case "doing":
-  //         tarefasDoing.unshift(tarefa);
-  //         break;
-  //       case "done":
-  //         tarefasDone.unshift(tarefa);
-  //         break;  
-  //     }
-  //   }) 
-  // }
-
-
+//     tarefas.map(tarefa => {
+//       switch(tarefa.estado){
+//         case "todo":
+//           tarefasToDo.unshift(tarefa);
+//           break;
+//         case "doing":
+//           tarefasDoing.unshift(tarefa);
+//           break;
+//         case "done":
+//           tarefasDone.unshift(tarefa);
+//           break;  
+//       }
+//     }) 
+//   }
 }
