@@ -2,22 +2,22 @@
   "tarefas": [
     {
       "estado": "todo",
-      "descricao": "tarefa teste 1",
+      "descricao": "tarefa 1",
       "id": 1
     },
     {
       "estado": "doing",
-      "descricao": "tarefa teste 2",
+      "descricao": "tarefa 2",
       "id": 2
     },
     {
       "estado": "done",
-      "descricao": "tarefa teste 3",
+      "descricao": "tarefa 3",
       "id": 3
     },
     {
       "estado": "todo",
-      "descricao": "tarefa teste 4",
+      "descricao": "tarefa 4",
       "id": 4
     }
   ]
