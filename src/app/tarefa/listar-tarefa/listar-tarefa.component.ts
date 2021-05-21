@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TarefaService } from 'src/app/services/tarefa-service.service';
+import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 import { Tarefa } from 'src/app/shared/models/tarefa';
 
 @Component({
@@ -9,7 +9,7 @@ import { Tarefa } from 'src/app/shared/models/tarefa';
 })
 export class ListarTarefaComponent implements OnInit {
 
-  tarefasToDo! : Array<Tarefa>;  
+  tarefasToDo! : Array<Tarefa>;
 
   constructor( private tarefaService : TarefaService ) { }
 

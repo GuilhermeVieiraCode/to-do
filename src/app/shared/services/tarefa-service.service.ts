@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tarefa } from '../shared/models/tarefa';
+import { Tarefa } from '../models/tarefa';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TarefaService {
 
-  url = "http://localhost:3000/todo";  
+  url = 'http://localhost:3000/todo';
 
   constructor(private httpClient: HttpClient) { }
 
