@@ -24,23 +24,7 @@ export class TarefaService {
     return this.httpClient.delete(`${this.url}/${id}`);
   }
 
-//   organizarTarefas(tarefas: Array<Tarefa): Array{
-//     tarefasToDo = [];
-//     tarefasDoing = [];
-//     tarefasDone = [];
-    
-//     tarefas.map(tarefa => {
-//       switch(tarefa.estado){
-//         case "todo":
-//           tarefasToDo.unshift(tarefa);
-//           break;
-//         case "doing":
-//           tarefasDoing.unshift(tarefa);
-//           break;
-//         case "done":
-//           tarefasDone.unshift(tarefa);
-//           break;  
-//       }
-//     }) 
-//   }
+  atualizar(tarefa: Tarefa): Observable<Tarefa>{
+    return this.httpClient.put<Tarefa>(`${this.url}/${tarefa.id}`, tarefa);
+  }
 }
