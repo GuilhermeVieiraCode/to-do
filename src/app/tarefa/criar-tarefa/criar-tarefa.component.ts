@@ -32,7 +32,7 @@ export class CriarTarefaComponent implements OnInit {
 
   }
 
-  organizarTarefas(tarefas : Array<Tarefa>){
+  organizarTarefas(tarefas : Array<Tarefa>): void{
     this.tarefasToDo = [];
     this.tarefasDoing = [];
     this.tarefasDone = [];
@@ -52,7 +52,7 @@ export class CriarTarefaComponent implements OnInit {
     }) 
   }
 
-  salvarTarefa(){
+  salvarTarefa(): void{
       this.tarefaService.inserir(this.tarefa).subscribe({
           next: (tarefa) => {
               console.log("Sucesso", tarefa);
@@ -66,7 +66,7 @@ export class CriarTarefaComponent implements OnInit {
                 }
             });
             }
-          })  
+       })  
   } 
 
 }

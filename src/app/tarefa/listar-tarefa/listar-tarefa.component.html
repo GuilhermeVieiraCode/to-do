@@ -1,28 +1,42 @@
 <div class="grid">
+  <div>
     <mat-card *ngFor="let tarefa of tarefasToDo" class="mat-card-tarefa">
-        <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>clear</mat-icon></button>
+        <div class="buttons">
+          <button mat-icon-button (click)="alterarEstado(tarefa!)"><mat-icon>done</mat-icon></button>
+          <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>delete</mat-icon></button>
+        </div>
         <mat-card-content>
           <p class="line-break">
             {{tarefa.descricao}}
           </p>  
-        </mat-card-content>
+        </mat-card-content>  
     </mat-card>
-
+  </div>
+  <div>  
     <mat-card *ngFor="let tarefa of tarefasDoing" class="mat-card-tarefa">
-      <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>clear</mat-icon></button>
+        <div class="buttons">
+          <button mat-icon-button (click)="estadoInicial(tarefa!)"><mat-icon>keyboard_arrow_left</mat-icon></button>
+          <button mat-icon-button (click)="alterarEstado(tarefa!)"><mat-icon>done_all</mat-icon></button>
+          <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>delete</mat-icon></button>
+        </div>      
+        <mat-card-content>
+          <p class="line-break">
+            {{tarefa.descricao}}
+          </p>  
+        </mat-card-content>    
+    </mat-card>
+  </div>
+  <div>
+    <mat-card *ngFor="let tarefa of tarefasDone" class="mat-card-tarefa">
+      <div class="buttons">
+        <button mat-icon-button (click)="alterarEstado(tarefa!)"><mat-icon>remove_done</mat-icon></button>
+        <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>delete</mat-icon></button>
+      </div>
       <mat-card-content>
         <p class="line-break">
           {{tarefa.descricao}}
         </p>  
       </mat-card-content>
-  </mat-card>
-
-  <mat-card *ngFor="let tarefa of tarefasDone" class="mat-card-tarefa">
-    <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>clear</mat-icon></button>
-    <mat-card-content>
-      <p class="line-break">
-        {{tarefa.descricao}}
-      </p>  
-    </mat-card-content>
-</mat-card>
+    </mat-card>
+  </div>
 </div>
