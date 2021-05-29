@@ -1,59 +1,39 @@
 {
   "tarefas": [
     {
+      "estado": "todo",
+      "descricao": "tarefa editada",
+      "id": 1
+    },
+    {
       "estado": "doing",
       "descricao": "tarefa 2",
       "id": 2
     },
     {
-      "estado": "todo",
-      "descricao": "tarefa",
-      "id": 6
-    },
-    {
       "estado": "done",
-      "descricao": "tarefa 4",
-      "id": 7
-    },
-    {
-      "estado": "doing",
       "descricao": "tarefa 3",
-      "id": 8
+      "id": 3
     },
     {
-      "estado": "doing",
+      "estado": "todo",
+      "descricao": "tarefa 4",
+      "id": 4
+    },
+    {
+      "estado": "todo",
       "descricao": "tarefa 5",
-      "id": 9
+      "id": 5
     },
     {
       "estado": "todo",
       "descricao": "tarefa 6",
-      "id": 10
+      "id": 6
     },
     {
       "estado": "todo",
       "descricao": "tarefa 7",
-      "id": 11
-    },
-    {
-      "estado": "todo",
-      "descricao": "tarefa 8",
-      "id": 12
-    },
-    {
-      "estado": "doing",
-      "descricao": "tarefa 9",
-      "id": 13
-    },
-    {
-      "estado": "todo",
-      "descricao": "tarefa 10",
-      "id": 14
-    },
-    {
-      "estado": "todo",
-      "descricao": "tarefa 11",
-      "id": 15
+      "id": 7
     }
   ]
 }

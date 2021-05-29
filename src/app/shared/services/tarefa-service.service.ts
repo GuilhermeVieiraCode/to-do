@@ -27,4 +27,8 @@ export class TarefaService {
   atualizar(tarefa: Tarefa): Observable<Tarefa>{
     return this.httpClient.put<Tarefa>(`${this.url}/${tarefa.id}`, tarefa);
   }
+
+  pesquisar(id: number): Observable<Tarefa>{
+    return this.httpClient.get<Tarefa>(`${this.url}/${id}`);
+}
 }

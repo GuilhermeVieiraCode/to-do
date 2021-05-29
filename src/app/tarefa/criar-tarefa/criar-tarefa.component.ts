@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 //import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
-
 import { Tarefa } from 'src/app/shared/models/tarefa';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 
 @Component({
   selector: 'app-criar-tarefa',
@@ -15,11 +15,28 @@ export class CriarTarefaComponent implements OnInit {
   tarefasAll!: Array<Tarefa>;
   tarefasToDo! : Array<Tarefa>;
   tarefasDoing! : Array<Tarefa>;
-  tarefasDone! : Array<Tarefa>;  
+  tarefasDone! : Array<Tarefa>;
+  
+  cadastroOp = true;
 
-  constructor( private tarefaService : TarefaService) { 
+  constructor( private tarefaService : TarefaService,
+               private rotaAtual :  ActivatedRoute,
+               private roteador : Router) { 
+    
     this.tarefa = new Tarefa();
-    this.tarefa.estado = "todo";
+    
+    if(this.rotaAtual.snapshot.paramMap.has('id')){
+      this.cadastroOp = false;
+      const idEdicao = Number(this.rotaAtual.snapshot.paramMap.get('id'));
+      
+      this.tarefaService.pesquisar(idEdicao).subscribe({
+        next: tarefaRetornada => this.tarefa = tarefaRetornada
+      })
+    }
+
+    if(this.cadastroOp === true){
+      this.tarefa.estado = "todo";
+    }
   }
 
   ngOnInit(): void {
@@ -53,7 +70,14 @@ export class CriarTarefaComponent implements OnInit {
   }
 
   salvarTarefa(): void{
-      this.tarefaService.inserir(this.tarefa).subscribe({
+    if(this.tarefa.id){
+      this.tarefaService.atualizar(this.tarefa).subscribe({
+          next: tarefaAtualizada => {
+              console.log(tarefaAtualizada);
+              this.roteador.navigate(['tarefas']);    
+          }})
+    }else{
+        this.tarefaService.inserir(this.tarefa).subscribe({
           next: (tarefa) => {
               console.log("Sucesso", tarefa);
               this.tarefa = new Tarefa();
@@ -67,6 +91,6 @@ export class CriarTarefaComponent implements OnInit {
             });
             }
        })  
-  } 
-
+    } 
+  }  
 }

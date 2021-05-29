@@ -5,6 +5,7 @@
       <mat-card *ngFor="let tarefa of tarefasToDo" class="mat-card-tarefa">
           <div class="buttons">
             <button mat-icon-button (click)="alterarEstado(tarefa!)"><mat-icon>done</mat-icon></button>
+            <button mat-icon-button (click)="editarTarefa(tarefa!)"><mat-icon>edit</mat-icon></button>
             <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>delete</mat-icon></button>
           </div>
           <mat-card-content>
@@ -22,6 +23,7 @@
           <div class="buttons">
             <button mat-icon-button (click)="estadoInicial(tarefa!)"><mat-icon>keyboard_arrow_left</mat-icon></button>
             <button mat-icon-button (click)="alterarEstado(tarefa!)"><mat-icon>done_all</mat-icon></button>
+            <button mat-icon-button (click)="editarTarefa(tarefa!)"><mat-icon>edit</mat-icon></button>
             <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>delete</mat-icon></button>
           </div>      
           <mat-card-content>
@@ -38,6 +40,7 @@
       <mat-card *ngFor="let tarefa of tarefasDone" class="mat-card-tarefa">
         <div class="buttons">
           <button mat-icon-button (click)="alterarEstado(tarefa!)"><mat-icon>remove_done</mat-icon></button>
+          <button mat-icon-button (click)="editarTarefa(tarefa!)"><mat-icon>edit</mat-icon></button>
           <button mat-icon-button (click)="removerTarefa(tarefa.id!, tarefa.estado!)"><mat-icon>delete</mat-icon></button>
         </div>
         <mat-card-content>
