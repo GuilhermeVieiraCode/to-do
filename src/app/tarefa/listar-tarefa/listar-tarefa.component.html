@@ -1,6 +1,6 @@
 <div class="grid">
-  <div>
-    <h2>A Fazer</h2>
+  <div class="back-card">
+    <p class="title">A fazer</p>
     <div class="scroll">
       <mat-card *ngFor="let tarefa of tarefasToDo" class="mat-card-tarefa">
           <div class="buttons">
@@ -16,8 +16,8 @@
       </mat-card>
     </div>
   </div>
-  <div>
-    <h2>Fazendo</h2>
+  <div class="back-card">
+    <p class="title">Em andamento</p>
     <div class="scroll">  
       <mat-card *ngFor="let tarefa of tarefasDoing" class="mat-card-tarefa">
           <div class="buttons">
@@ -34,8 +34,8 @@
       </mat-card>
     </div>
   </div>
-  <div>
-    <h2>Feita</h2>
+  <div class="back-card">
+    <p class="title">Concluída</p>
     <div class="scroll">
       <mat-card *ngFor="let tarefa of tarefasDone" class="mat-card-tarefa">
         <div class="buttons">
