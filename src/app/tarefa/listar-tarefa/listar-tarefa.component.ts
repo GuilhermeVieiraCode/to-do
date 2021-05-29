@@ -6,7 +6,7 @@ import { Tarefa } from 'src/app/shared/models/tarefa';
 @Component({
   selector: 'app-listar-tarefa',
   templateUrl: './listar-tarefa.component.html',
-  styleUrls: ['./listar-tarefa.component.scss']
+  styleUrls: ['./listar-tarefa.component.scss'],
 })
 
 export class ListarTarefaComponent implements OnInit {
