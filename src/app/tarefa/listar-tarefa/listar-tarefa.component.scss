@@ -4,7 +4,7 @@
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  margin-top: 116px;
+  margin-top: 94px;
 }
 
 .mat-card-tarefa{
@@ -32,3 +32,9 @@
   max-width: 216px;
   word-wrap: break-word;
 } 
+
+.scroll {
+  height: 450px; 
+  width: 270px;
+  overflow: auto;
+}
