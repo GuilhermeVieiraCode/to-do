@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 import { Tarefa } from 'src/app/shared/models/tarefa';
+import { Router } from '@angular/router';
 //import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class ListarTarefaComponent implements OnInit {
   @Input() tarefasDoing!: Array<Tarefa>;
   @Input() tarefasDone!: Array<Tarefa>;
 
-  constructor( private tarefaService : TarefaService ) { }
+  constructor( private tarefaService : TarefaService,
+               private roteador : Router  ) { }
 
   ngOnInit(): void {}
 
@@ -61,6 +63,10 @@ export class ListarTarefaComponent implements OnInit {
       this.tarefaService.atualizar(tarefa).subscribe({
         next: () => console.log("Tarefa atualizada:", tarefa)
     })  
+  }
+
+  editarTarefa(tarefa: Tarefa): void {
+    this.roteador.navigate(['tarefas', tarefa.id]);
   }
 
   removerTarefa(id: number, estado: string): void{
