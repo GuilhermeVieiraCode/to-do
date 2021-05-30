@@ -6,10 +6,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import {ScrollingModule} from '@angular/cdk/scrolling';
 import { CriarTarefaComponent } from './criar-tarefa/criar-tarefa.component';
 import { ListarTarefaComponent } from './listar-tarefa/listar-tarefa.component';
 import { TelaTarefaComponent } from './tela-tarefa/tela-tarefa.component';
+import { LayoutModule } from '../layout/layout.module';
 
 @NgModule({
   declarations: [CriarTarefaComponent, ListarTarefaComponent, TelaTarefaComponent],
@@ -21,7 +21,7 @@ import { TelaTarefaComponent } from './tela-tarefa/tela-tarefa.component';
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
-    ScrollingModule
+    LayoutModule
   ],
   exports: [
       CriarTarefaComponent,
