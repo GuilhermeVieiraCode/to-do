@@ -5,10 +5,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TarefaModule } from './tarefa/tarefa.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { NgxMaskModule } from 'ngx-mask';
 import { FirestoreModule } from './firestore/firestore.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
-import { LayoutModule } from "./layout/layout.module";
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import { LayoutModule } from "./layout/layout.module";
     FirestoreModule,
     TarefaModule,
     AutenticacaoModule,
-    LayoutModule
 ],
   providers: [],
   bootstrap: [AppComponent]
