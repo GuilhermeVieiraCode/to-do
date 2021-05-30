@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-//import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
+import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
 import { Tarefa } from 'src/app/shared/models/tarefa';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
+// import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 
 @Component({
   selector: 'app-criar-tarefa',
@@ -19,7 +19,7 @@ export class CriarTarefaComponent implements OnInit {
   
   cadastroOp = true;
 
-  constructor( private tarefaService : TarefaService,
+  constructor( private tarefaService : TarefaFirestoreService,
                private rotaAtual :  ActivatedRoute,
                private roteador : Router) { 
     
@@ -27,9 +27,9 @@ export class CriarTarefaComponent implements OnInit {
     
     if(this.rotaAtual.snapshot.paramMap.has('id')){
       this.cadastroOp = false;
-      const idEdicao = Number(this.rotaAtual.snapshot.paramMap.get('id'));
+      const idEdicao = this.rotaAtual.snapshot.paramMap.get('id');
       
-      this.tarefaService.pesquisar(idEdicao).subscribe({
+      this.tarefaService.pesquisar(idEdicao!).subscribe({
         next: tarefaRetornada => this.tarefa = tarefaRetornada
       })
     }
