@@ -1,0 +1,29 @@
+.grid-criar-quadro {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.descricao{
+    height: 70px;
+}
+
+button{
+    margin-top: 10%;
+    margin-left: 55%
+}
+
+.save-button{
+    border: 2px solid rgb(51, 51, 153);
+}
+
+.criar-quadro-card{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 80px;
+  max-width: 200px;
+  border: 5px solid rgb(51, 51, 153);
+  margin-left: 15px;
+}
