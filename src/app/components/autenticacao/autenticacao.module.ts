@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from '../app-routing.module';
+import { AppRoutingModule } from '../../app-routing.module';
 
 @NgModule({
   declarations: [CadastroComponent, LogarComponent],
