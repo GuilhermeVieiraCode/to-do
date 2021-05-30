@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
+//import { TarefaService } from 'src/app/shared/services/tarefa-service.service';
 import { Tarefa } from 'src/app/shared/models/tarefa';
 import { Router } from '@angular/router';
-//import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
+import { TarefaFirestoreService } from 'src/app/shared/services/tarefa-firestore.service';
 
 @Component({
   selector: 'app-listar-tarefa',
@@ -16,7 +16,7 @@ export class ListarTarefaComponent implements OnInit {
   @Input() tarefasDoing!: Array<Tarefa>;
   @Input() tarefasDone!: Array<Tarefa>;
 
-  constructor( private tarefaService : TarefaService,
+  constructor( private tarefaService : TarefaFirestoreService,
                private roteador : Router  ) { }
 
   ngOnInit(): void {}
@@ -69,7 +69,7 @@ export class ListarTarefaComponent implements OnInit {
     this.roteador.navigate(['tarefas', tarefa.id]);
   }
 
-  removerTarefa(id: number, estado: string): void{
+  removerTarefa(id: string, estado: string): void{
     this.tarefaService.remover(id).subscribe({
       next: () => {
           switch(estado){
