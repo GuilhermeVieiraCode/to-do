@@ -12,7 +12,7 @@
                   <textarea class="descricao" matInput [(ngModel)]="tarefa.descricao" [ngModelOptions]="{standalone: true}"></textarea>
               </mat-form-field>
           </form>
-          <button class="save-button" mat-stroked-button (click)="salvarTarefa()">Salvar</button>
+          <button mat-raised-button color="primary"(click)="salvarTarefa()">Salvar</button>
       </mat-card-content>
   </mat-card>
 </div>

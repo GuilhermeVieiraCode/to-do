@@ -36,6 +36,8 @@ export class CriarTarefaComponent implements OnInit {
 
     if(this.cadastroOp === true){
       this.tarefa.estado = "todo";
+      var today = new Date();
+      this.tarefa.datetime = today;
     }
   }
 
@@ -44,9 +46,12 @@ export class CriarTarefaComponent implements OnInit {
         next: (tarefas) => {
           this.tarefasAll = tarefas;
           this.organizarTarefas(this.tarefasAll)
+          
+          this.tarefasToDo.sort(function(a,b){
+            return Number(b.datetime!) - Number(a.datetime!);
+          });
       }
     })
-
   }
 
   organizarTarefas(tarefas : Array<Tarefa>): void{
@@ -82,14 +87,9 @@ export class CriarTarefaComponent implements OnInit {
               console.log("Sucesso", tarefa);
               this.tarefa = new Tarefa();
               this.tarefa.estado = "todo";
-
-              this.tarefaService.listar().subscribe({
-                next: (tarefas) => {
-                  this.tarefasAll = tarefas;
-                  this.organizarTarefas(this.tarefasAll)
-                }
-            });
-            }
+              var today = new Date();
+              this.tarefa.datetime = today;
+          }
        })  
     } 
   }  
