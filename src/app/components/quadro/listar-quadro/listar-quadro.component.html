@@ -1,0 +1,18 @@
+<div class="grid">
+  <div class="back-card">
+    <p class="title">Meus Quadros</p>
+    <div class="scroll">
+      <mat-card *ngFor="let quadro of quadrosAll" class="mat-card-tarefa">
+          <div class="buttons">
+            <button mat-icon-button (click)="editar()"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button><mat-icon>delete</mat-icon></button>
+          </div>
+          <mat-card-content>
+            <p class="line-break">
+              {{quadro.descricao}}
+            </p>  
+          </mat-card-content>  
+      </mat-card>
+    </div>
+  </div>
+</div>

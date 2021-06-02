@@ -9,12 +9,16 @@
             <form>
                 <mat-form-field>
                     <mat-label>Descrição</mat-label>
-                    <textarea class="descricao" matInput></textarea>
+                    <textarea class="descricao" matInput [(ngModel)]="quadro.descricao" [ngModelOptions]="{standalone: true}"></textarea>
                 </mat-form-field>
             </form>
-            <button class="save-button" mat-stroked-button>Salvar</button>
+            <button class="save-button" (click)="salvarQuadro()" mat-raised-button color="primary">Salvar</button>
         </mat-card-content>
     </mat-card>
   </div>
+  <div>
+    <app-listar-quadro [quadrosAll]=quadrosAll></app-listar-quadro>
+  </div>
 </div>
+
   
