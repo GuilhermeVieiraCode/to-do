@@ -1,0 +1,53 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-top: 72px;
+}
+
+.back-card {
+  background-color: #ebecf0;
+  border-radius: 5px;
+  width: 90%;
+  padding: 10px 10px 10px 15px;
+  max-height: 100%;
+}
+
+.mat-card-tarefa{
+  margin-bottom: 10px;
+  align-items: center;
+  max-width: 216px; 
+  background-color: rgba(51, 51, 153, 0.3);
+}
+
+.mat-icon-button i, .mat-icon-button .mat-icon {
+  line-height: 0px;
+}
+
+.mat-card-content {
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.line-break {
+  max-width: 216px;
+  word-wrap: break-word;
+} 
+
+.scroll {
+  height: 450px; 
+  width: 270px;
+  overflow: auto;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+}

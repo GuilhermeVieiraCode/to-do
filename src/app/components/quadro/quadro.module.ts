@@ -7,10 +7,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { ListarQuadroComponent } from './listar-quadro/listar-quadro.component';
 
 
 @NgModule({
-  declarations: [CriarQuadroComponent],
+  declarations: [CriarQuadroComponent, ListarQuadroComponent],
   imports: [
     CommonModule,
     MatInputModule,
