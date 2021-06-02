@@ -6,11 +6,28 @@
   justify-content: space-between;
 }
 
+.navbar-div {
+  display: flex;
+  flex-direction: row;
+
+  p {
+    margin-top: 22px; 
+  }
+}
+
 .sair {
   color: white;
+  font-weight: 500;
+  font-size: larger;
 }
 
 .imgLogo {
   width: 75px;
   height: 65px;
+}
+
+p {
+  color: white;
+  font-weight: 500;
+  font-size: larger;
 }
